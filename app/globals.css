@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand palette — mirrored in tailwind.config.ts */
+    --sun: #f4922b;
+    --terracotta: #d2691e;
+    --terracotta-deep: #a6440f; /* derived: AA-safe terracotta for small text */
+    --terracotta-dark: #7a3410;
+    --cream: #fdf8f0;
+    --ivory: #fffdf9;
+    --gold: #c9a227;
+    --gold-deep: #7a6314; /* derived: AA-safe gold for text */
+    --blush: #f2c4c8;
+    --sage: #9caf88;
+    --cocoa: #3b302a;
+    --cocoa-soft: #6b5d53;
+
+    /* Fixed header clearance for in-page anchors */
+    scroll-padding-top: 6rem;
+    color-scheme: light;
+
+    /* iPhone home-indicator / notch clearance, used by fixed bottom UI */
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-top: env(safe-area-inset-top, 0px);
+    /* Height of the sticky product/bulk action bar, so pages can pad for it */
+    --action-bar-height: 4.75rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* Framer Motion measures scroll offsets against the scroll container;
+       a non-static container keeps the hero parallax offsets exact. */
+    position: relative;
+  }
+
+  body {
+    background-color: var(--cream);
+    /* Long Devanagari and product names must break rather than push the page wide */
+    overflow-wrap: break-word;
+    color: var(--cocoa);
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Cormorant ships old-style figures by default, which makes "1" read as "I"
+     and prices look uneven. Lining numerals keep numbers legible. */
+  .font-display {
+    font-variant-numeric: lining-nums;
+  }
+
+  /* Display type is set tight; body copy stays generous and readable. */
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: rgb(244 146 43 / 0.28);
+    color: var(--cocoa);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Horizontal scroll strips (occasions) — scrollable, no visible bar. */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Full-bleed helper for banners inside a contained layout. */
+  .edge-fade-x {
+    mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+  }
+}
+
+@layer utilities {
+  /* Viewport height that does not jump when mobile browser chrome hides. */
+  .min-h-screen-dvh {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Bottom padding that clears the iPhone home indicator. */
+  .pb-safe {
+    padding-bottom: calc(0.75rem + var(--safe-bottom));
+  }
+
+  .bottom-safe {
+    bottom: calc(1.25rem + var(--safe-bottom));
+  }
+
+  /* Reserves room for the sticky action bar on product and bulk pages. */
+  .pb-action-bar {
+    padding-bottom: calc(var(--action-bar-height) + var(--safe-bottom));
+  }
+
+  /* Horizontal scroll strips: snap, no visible scrollbar, momentum on iOS. */
+  .snap-strip {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .snap-strip > * {
+    scroll-snap-align: start;
+  }
+}
+
+/*
+ * Motion policy.
+ * Scroll-linked effects (hero parallax) are desktop-only: they are janky on
+ * phones and cost battery. Everything else degrades to a plain fade.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .snap-strip {
+    scroll-behavior: auto !important;
+  }
+}
