@@ -76,9 +76,9 @@ export function Hero({
             initial={reduced ? { opacity: 1 } : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.16, ease }}
-            className="mt-4 max-w-xl text-body-sm leading-relaxed text-cocoa-soft sm:mt-6 sm:text-[1.08rem]"
+            className="mt-4 w-[300px] text-body-sm leading-relaxed text-cocoa-soft sm:mt-6 sm:text-[1.08rem]"
           >
-            Premium handmade candles, resin art &amp; décor — made by hand in Pune.
+            Premium handmade candles, resin art &amp; décor - made by hand in Pune.
           </motion.p>
 
           <motion.div
@@ -90,8 +90,8 @@ export function Hero({
             <Button
               href={whatsappHref}
               external
-              size="lg"
-              className="w-full sm:w-auto"
+              size="md"
+              className="w-[220px] sm:w-auto"
               icon={<MessageCircle className="h-[18px] w-[18px]" />}
             >
               Order on WhatsApp
@@ -99,6 +99,8 @@ export function Hero({
             <Button
               href={exploreHref}
               variant="link"
+              size="md"
+              className="w-[220px] sm:w-auto"
               icon={<ArrowRight className="h-[18px] w-[18px]" />}
             >
               Explore the Collection
