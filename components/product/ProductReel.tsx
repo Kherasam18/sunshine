@@ -42,7 +42,7 @@ export function ProductReel({ reel, productName }: { reel: VideoSlot; productNam
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-terracotta-deep">
+            <p className="font-sans text-eyebrow font-semibold uppercase text-terracotta-deep">
               Watch it being made
             </p>
             <h2
@@ -51,7 +51,7 @@ export function ProductReel({ reel, productName }: { reel: VideoSlot; productNam
             >
               This is your {productName}, before it was yours.
             </h2>
-            <p className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-cocoa-soft">
+            <p className="mt-4 max-w-lg text-body-sm leading-relaxed text-cocoa-soft">
               Wax melted and tinted by hand, poured, left to set, demoulded — the part that goes
               wrong most often — then finished one piece at a time.
             </p>

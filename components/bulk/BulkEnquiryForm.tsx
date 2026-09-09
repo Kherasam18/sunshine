@@ -81,7 +81,7 @@ export function BulkEnquiryForm({
             <h3 className="mt-6 font-display text-3xl font-bold text-terracotta">
               Thank you{form.name.trim() ? `, ${form.name.trim().split(' ')[0]}` : ''}.
             </h3>
-            <p className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-cocoa-soft">
+            <p className="mt-4 max-w-lg text-body-sm leading-relaxed text-cocoa-soft">
               Your enquiry is with us. We will come back on WhatsApp within a day with pricing,
               what is possible in your timeline, and a couple of options you may not have thought
               of. For anything urgent, message us directly — it is the fastest way to reach the
@@ -118,7 +118,7 @@ export function BulkEnquiryForm({
               if (validate()) setSubmitted(true);
             }}
           >
-            <h3 className="font-display text-2xl font-semibold text-terracotta sm:text-3xl">
+            <h3 className="font-display text-display-3 font-semibold text-terracotta">
               Tell us what you need
             </h3>
             <p className="mt-2 text-[0.9rem] leading-relaxed text-cocoa-soft">

@@ -63,7 +63,7 @@ export function PageHero({
         <Breadcrumbs items={crumbs} />
 
         {eyebrow ? (
-          <p className="mt-6 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-terracotta-deep">
+          <p className="mt-6 font-sans text-eyebrow font-semibold uppercase text-terracotta-deep">
             {eyebrow}
           </p>
         ) : null}

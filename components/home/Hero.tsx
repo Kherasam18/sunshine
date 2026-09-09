@@ -98,9 +98,7 @@ export function Hero({
             </Button>
             <Button
               href={exploreHref}
-              variant="secondary"
-              size="lg"
-              className="w-full sm:w-auto"
+              variant="link"
               icon={<ArrowRight className="h-[18px] w-[18px]" />}
             >
               Explore the Collection

@@ -91,7 +91,7 @@ export function CustomiseBuilder({
           <h2 className="mt-3 font-display text-display-2 font-bold text-terracotta">
             {current.title}
           </h2>
-          <p className="mt-2 max-w-lg text-[0.93rem] leading-relaxed text-cocoa-soft">
+          <p className="mt-2 max-w-lg text-body-sm leading-relaxed text-cocoa-soft">
             {current.helper}
           </p>
 

@@ -25,8 +25,8 @@ export function EmptyState({
       <LogoMark className="mx-auto h-12 w-12 text-terracotta/40" title="" />
       <span aria-hidden="true" className="mx-auto mt-5 block h-px w-12 bg-gold/60" />
 
-      <h2 className="mt-6 font-display text-2xl font-semibold text-terracotta sm:text-3xl">{title}</h2>
-      <p className="mx-auto mt-4 max-w-md text-[0.93rem] leading-relaxed text-cocoa-soft">{description}</p>
+      <h2 className="mt-6 font-display text-display-3 font-semibold text-terracotta">{title}</h2>
+      <p className="mx-auto mt-4 max-w-md text-body-sm leading-relaxed text-cocoa-soft">{description}</p>
 
       {children ? <div className="mt-8 flex flex-wrap justify-center gap-3">{children}</div> : null}
     </div>

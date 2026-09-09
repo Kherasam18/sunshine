@@ -89,7 +89,7 @@ export default async function BulkPage() {
           >
             Get a Bulk Quote
           </Button>
-          <Button href="#enquiry" variant="secondary" size="lg" className="w-full sm:w-auto">
+          <Button href="#enquiry" variant="link">
             Or fill in the form
           </Button>
         </div>
@@ -146,10 +146,10 @@ export default async function BulkPage() {
           </div>
 
           <Reveal delay={0.15}>
-            <h3 className="font-display text-2xl font-semibold text-terracotta sm:text-3xl">
+            <h3 className="font-display text-display-3 font-semibold text-terracotta">
               Make it yours
             </h3>
-            <p className="mt-3 max-w-prose text-[0.93rem] leading-relaxed text-cocoa-soft">
+            <p className="mt-3 max-w-prose text-body-sm leading-relaxed text-cocoa-soft">
               Four things we can change for you, at no minimum beyond the order itself.
             </p>
             <ul className="mt-7 space-y-4">

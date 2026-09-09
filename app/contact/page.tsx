@@ -91,7 +91,7 @@ export default async function ContactPage() {
                       <Icon aria-hidden="true" className="h-[22px] w-[22px]" strokeWidth={1.7} />
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-cocoa-soft">
+                      <span className="block font-sans text-eyebrow font-semibold uppercase text-cocoa-soft">
                         {label}
                       </span>
                       <span className="mt-1 block font-display text-xl font-semibold leading-tight text-cocoa transition-colors group-hover:text-terracotta-deep">
@@ -108,7 +108,7 @@ export default async function ContactPage() {
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div className="rounded-3xl bg-ivory p-5 ring-1 ring-gold/25">
-                <h2 className="flex items-center gap-2 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-terracotta-deep">
+                <h2 className="flex items-center gap-2 font-sans text-eyebrow font-semibold uppercase text-terracotta-deep">
                   <MapPin aria-hidden="true" className="h-4 w-4" />
                   Where we are
                 </h2>
@@ -122,7 +122,7 @@ export default async function ContactPage() {
               </div>
 
               <div className="rounded-3xl bg-ivory p-5 ring-1 ring-gold/25">
-                <h2 className="flex items-center gap-2 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-terracotta-deep">
+                <h2 className="flex items-center gap-2 font-sans text-eyebrow font-semibold uppercase text-terracotta-deep">
                   <Clock aria-hidden="true" className="h-4 w-4" />
                   Studio hours
                 </h2>

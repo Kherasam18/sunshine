@@ -60,7 +60,7 @@ export async function ShopByOccasion() {
                 <h3 className="mt-3.5 font-display text-lg font-semibold leading-tight text-cocoa transition-colors group-hover:text-terracotta-deep">
                   {occasion.name}
                 </h3>
-                <p className="mt-1 font-sans text-[0.68rem] font-medium uppercase tracking-[0.16em] text-cocoa-soft">
+                <p className="mt-1 font-sans text-eyebrow font-medium uppercase tracking-[0.16em] text-cocoa-soft">
                   {occasion.season}
                 </p>
                 <p className="mt-2 hidden text-[0.82rem] leading-snug text-cocoa-soft lg:block">

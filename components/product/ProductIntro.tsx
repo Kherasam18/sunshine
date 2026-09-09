@@ -39,11 +39,11 @@ export function ProductIntro({
         {product.shortDescription}
       </p>
 
-      <p className="mt-5 max-w-prose text-[0.97rem] leading-relaxed text-cocoa-soft">
+      <p className="mt-5 max-w-prose text-body-sm leading-relaxed sm:text-[0.97rem] text-cocoa-soft">
         {product.longDescription}
       </p>
 
-      <p className="mt-6 font-display text-2xl font-semibold text-terracotta-deep">
+      <p className="mt-6 font-display text-display-3 font-semibold text-terracotta-deep">
         {product.priceLabel}
         {product.boxOption ? (
           <span className="ml-3 font-sans text-[0.82rem] font-normal text-cocoa-soft">

@@ -77,7 +77,7 @@ export async function BulkBanner() {
 
           <Reveal delay={0.15} className="w-full">
             <div className="overflow-hidden rounded-3xl bg-cream/97 p-6 text-cocoa shadow-lift ring-1 ring-cream/40 sm:p-8">
-              <h3 className="font-display text-2xl font-semibold text-terracotta-deep">
+              <h3 className="font-display text-display-3 font-semibold text-terracotta-deep">
                 Wholesale tiers
               </h3>
               <p className="mt-1.5 text-sm text-cocoa-soft">

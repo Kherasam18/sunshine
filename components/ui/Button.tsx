@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'onDark';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'onDark' | 'link';
 type Size = 'sm' | 'md' | 'lg';
 
 const base =
@@ -18,6 +18,11 @@ const variants: Record<Variant, string> = {
   ghost: 'text-cocoa hover:text-terracotta-deep',
   onDark:
     'bg-cream text-terracotta-deep shadow-warm hover:bg-white hover:shadow-lift active:translate-y-px focus-visible:ring-cream focus-visible:ring-offset-terracotta-dark',
+  /**
+   * Unfilled secondary action. Two stacked pills read heavy on a phone, so the
+   * lesser action becomes a link — while keeping a 44px hit area for touch.
+   */
+  link: 'text-terracotta-deep underline decoration-terracotta/30 underline-offset-4 hover:decoration-terracotta',
 };
 
 const sizes: Record<Size, string> = {
@@ -47,7 +52,13 @@ type AnchorProps = CommonProps & {
 
 export function Button(props: ButtonProps | AnchorProps) {
   const { variant = 'primary', size = 'md', className, children, icon } = props;
-  const classes = cn(base, variants[variant], sizes[size], className);
+  // `link` opts out of the pill sizing but keeps the 44px touch minimum.
+  const classes = cn(
+    base,
+    variants[variant],
+    variant === 'link' ? 'min-h-[44px] px-1' : sizes[size],
+    className,
+  );
   const inner = (
     <>
       {children}

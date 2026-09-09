@@ -19,7 +19,7 @@ export async function ShopByCraft() {
         intro="Candles, resin, clay and cut wood — all made under one roof, so a single order can cover the favours, the keepsake and the nameplate."
       />
 
-      <RevealGroup className="mt-12 grid gap-5 md:grid-cols-2 lg:mt-16 xl:grid-cols-4 xl:gap-6">
+      <RevealGroup className="mt-8 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:mt-16 xl:grid-cols-4 xl:gap-6">
         {crafts.map((craft) => (
           <RevealItem key={craft.id} className="h-full">
             <Link
@@ -29,6 +29,7 @@ export async function ShopByCraft() {
               <BrandImage
                 slot={craft.image}
                 aspect="4:5"
+                mobileAspect="3:2"
                 sizes="(max-width: 767px) 92vw, (max-width: 1279px) 46vw, 23vw"
                 imageClassName="transition duration-700 ease-out group-hover:scale-[1.06]"
                 className="transition duration-700 ease-out group-hover:scale-[1.02]"

@@ -67,7 +67,7 @@ export function PreBooking({ occasionName }: { occasionName: string }) {
                 <h2 className="mt-6 font-display text-3xl font-bold text-terracotta sm:text-4xl">
                   You are on the list{name.trim() ? `, ${name.trim().split(' ')[0]}` : ''}.
                 </h2>
-                <p className="mt-4 max-w-lg text-[0.95rem] leading-relaxed text-cocoa-soft">
+                <p className="mt-4 max-w-lg text-body-sm leading-relaxed text-cocoa-soft">
                   We will message you on WhatsApp as soon as the {occasionName} batch opens, with
                   first pick of colours and a pre-booking price. In the meantime, say hello — it
                   helps us hold your slot.
@@ -101,17 +101,17 @@ export function PreBooking({ occasionName }: { occasionName: string }) {
                 transition={{ duration: 0.3 }}
               >
                 <div className="text-center">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-sun/15 px-4 py-1.5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-terracotta-deep ring-1 ring-inset ring-sun/30">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-sun/15 px-4 py-1.5 font-sans text-eyebrow font-semibold uppercase text-terracotta-deep ring-1 ring-inset ring-sun/30">
                     <Sparkles aria-hidden="true" className="h-3.5 w-3.5" />
                     Pre-booking open
                   </span>
                   <h2
                     id="pre-booking-heading"
-                    className="mt-5 font-display text-[2rem] font-bold leading-tight text-terracotta sm:text-[2.6rem]"
+                    className="mt-5 font-display text-display-2 font-bold text-terracotta"
                   >
                     Pre-booking is open for {occasionName}.
                   </h2>
-                  <p className="mx-auto mt-4 max-w-xl text-[0.95rem] leading-relaxed text-cocoa-soft">
+                  <p className="mx-auto mt-4 max-w-xl text-body-sm leading-relaxed text-cocoa-soft">
                     Festive batches fill up early and everything is made to order. Leave your name
                     and we will reach out on WhatsApp the moment your festival slot opens.
                   </p>

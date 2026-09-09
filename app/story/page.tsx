@@ -77,18 +77,18 @@ export default async function StoryPage() {
               ) : null}
 
               <Reveal delay={0.1} className={cn(reversed && 'lg:order-1')}>
-                <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-terracotta-deep">
+                <p className="font-sans text-eyebrow font-semibold uppercase text-terracotta-deep">
                   {chapter.eyebrow}
                 </p>
                 <h2
                   id={`${chapter.id}-heading`}
-                  className="mt-3 font-display text-[2rem] font-bold leading-tight text-terracotta sm:text-4xl"
+                  className="mt-3 font-display text-display-2 font-bold text-terracotta"
                 >
                   {chapter.title}
                 </h2>
 
                 {chapter.body.map((paragraph) => (
-                  <p key={paragraph.slice(0, 24)} className="mt-4 max-w-prose text-base leading-relaxed text-cocoa-soft">
+                  <p key={paragraph.slice(0, 24)} className="mt-4 max-w-prose text-body-sm leading-relaxed sm:text-base text-cocoa-soft">
                     {paragraph}
                   </p>
                 ))}
@@ -109,14 +109,14 @@ export default async function StoryPage() {
       <Section tone="cream" spacing="roomy" rangoli>
         <Divider className="mx-auto max-w-sm" motif="sunflower" />
         <Reveal className="mx-auto mt-8 max-w-2xl text-center">
-          <p className="inline-flex items-center gap-2 rounded-full bg-sun/15 px-4 py-1.5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-terracotta-deep ring-1 ring-inset ring-sun/30">
+          <p className="inline-flex items-center gap-2 rounded-full bg-sun/15 px-4 py-1.5 font-sans text-eyebrow font-semibold uppercase text-terracotta-deep ring-1 ring-inset ring-sun/30">
             <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
             Made in {site.location.city}
           </p>
-          <h2 className="mt-6 font-display text-[2rem] font-bold leading-tight text-terracotta sm:text-4xl">
+          <h2 className="mt-6 font-display text-display-2 font-bold text-terracotta">
             Thank you for believing in our little business.
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-cocoa-soft">
+          <p className="mt-5 text-body-sm leading-relaxed sm:text-base text-cocoa-soft">
             Every order — one candle or five hundred — is still a small surprise at this end. If you
             have an idea, send it over. We would love to make it for you.
           </p>
@@ -129,7 +129,7 @@ export default async function StoryPage() {
             >
               Say hello on WhatsApp
             </Button>
-            <Button href="/customise" variant="secondary" size="lg">
+            <Button href="/customise" variant="link">
               Customise something
             </Button>
           </div>

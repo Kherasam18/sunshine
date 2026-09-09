@@ -48,7 +48,7 @@ export function ContactForm() {
             <h3 className="mt-6 font-display text-2xl font-bold text-terracotta sm:text-3xl">
               Message received{name.trim() ? `, ${name.trim().split(' ')[0]}` : ''}.
             </h3>
-            <p className="mt-4 max-w-md text-[0.93rem] leading-relaxed text-cocoa-soft">
+            <p className="mt-4 max-w-md text-body-sm leading-relaxed text-cocoa-soft">
               We will reply on WhatsApp, usually the same day. If it is urgent, message us directly —
               that reaches the studio fastest.
             </p>
@@ -69,7 +69,7 @@ export function ContactForm() {
             onSubmit={handleSubmit}
             noValidate
           >
-            <h2 className="font-display text-2xl font-semibold text-terracotta sm:text-3xl">
+            <h2 className="font-display text-display-3 font-semibold text-terracotta">
               Send us a note
             </h2>
             <p className="mt-2 text-[0.9rem] leading-relaxed text-cocoa-soft">

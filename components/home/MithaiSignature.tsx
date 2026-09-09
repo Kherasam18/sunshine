@@ -35,20 +35,24 @@ export async function MithaiSignature() {
       />
 
       <Reveal delay={0.1}>
-        <ul className="mx-auto mt-10 flex max-w-3xl flex-col gap-3 rounded-3xl bg-ivory/70 px-6 py-5 ring-1 ring-gold/25 sm:flex-row sm:justify-between sm:gap-8 sm:px-8">
+        {/* Phones stack label over detail; sharing a row made "Real silver varq"
+            wrap against its own description. */}
+        <ul className="mx-auto mt-8 flex max-w-3xl flex-col divide-y divide-gold/20 rounded-3xl bg-ivory/70 px-5 py-2 ring-1 ring-gold/25 sm:mt-10 sm:flex-row sm:divide-y-0 sm:justify-between sm:gap-8 sm:px-8 sm:py-5">
           {highlights.map((item) => (
-            <li key={item.label} className="flex items-baseline gap-2.5 sm:flex-col sm:gap-1 sm:text-center">
-              <span className="font-display text-lg font-semibold text-terracotta-deep sm:text-xl">
+            <li key={item.label} className="flex flex-col gap-0.5 py-3 sm:gap-1 sm:py-0 sm:text-center">
+              <span className="font-display text-[1.05rem] font-semibold leading-tight text-terracotta-deep sm:text-xl">
                 {item.label}
               </span>
-              <span className="text-[0.8rem] leading-snug text-cocoa-soft">{item.detail}</span>
+              <span className="text-[0.75rem] leading-snug text-cocoa-soft sm:text-[0.8rem]">
+                {item.detail}
+              </span>
             </li>
           ))}
         </ul>
       </Reveal>
 
       <RevealGroup
-        className="mt-12 grid grid-cols-1 gap-4 xs:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-7 lg:mt-16"
+        className="mt-8 grid grid-cols-1 gap-4 xs:grid-cols-2 sm:mt-12 sm:gap-6 lg:mt-16 lg:grid-cols-3 lg:gap-7"
         stagger={0.07}
       >
         {products.map((product, index) => (
@@ -62,10 +66,10 @@ export async function MithaiSignature() {
         ))}
       </RevealGroup>
 
-      <Divider className="mx-auto mt-14 max-w-md" motif="sunflower" />
+      <Divider className="mx-auto mt-10 max-w-md sm:mt-14" motif="sunflower" />
 
       <Reveal className="mt-8 flex flex-col items-center gap-4 text-center">
-        <p className="max-w-xl text-[0.95rem] leading-relaxed text-cocoa-soft">
+        <p className="max-w-xl text-body-sm leading-relaxed text-cocoa-soft">
           Every mithai candle is poured to order, so the colours can follow your décor, your
           packaging or your mandap.
         </p>
@@ -77,7 +81,7 @@ export async function MithaiSignature() {
           >
             Enquire on WhatsApp
           </Button>
-          <Button href="/bulk" variant="secondary" icon={<ArrowRight className="h-[18px] w-[18px]" />}>
+          <Button href="/bulk" variant="link" icon={<ArrowRight className="h-[18px] w-[18px]" />}>
             See bulk pricing
           </Button>
         </div>

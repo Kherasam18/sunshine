@@ -73,7 +73,7 @@ export function Accordion({
                   transition={{ duration: 0.32, ease: [0.21, 0.68, 0.35, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="max-w-prose pb-6 pr-10 text-[0.93rem] leading-relaxed text-cocoa-soft">
+                  <p className="max-w-prose pb-6 pr-10 text-body-sm leading-relaxed text-cocoa-soft">
                     {item.answer}
                   </p>
                 </motion.div>

@@ -38,6 +38,7 @@ export function ProductCard({
         <BrandImage
           slot={image}
           aspect="4:5"
+          mobileAspect="1:1"
           priority={priority}
           sizes={sizes ?? '(max-width: 479px) 92vw, (max-width: 767px) 46vw, (max-width: 1279px) 31vw, 23vw'}
           imageClassName="transition duration-700 ease-out group-hover:scale-[1.06]"
@@ -56,7 +57,7 @@ export function ProductCard({
       </div>
 
       <div className="flex flex-1 flex-col p-4 xs:p-5">
-        <h3 className="font-display text-xl font-semibold leading-snug text-cocoa">
+        <h3 className="font-display text-[1.05rem] font-semibold leading-snug text-cocoa xs:text-xl">
           {/* Stretched link: the whole card opens the product page, while the
               WhatsApp button below sits above it on the z-axis. */}
           <Link
@@ -91,7 +92,7 @@ export function ProductCard({
         <div className="mt-5 flex items-end justify-between gap-3 border-t border-gold/25 pt-4">
           <p className="font-display text-lg font-semibold text-terracotta-deep">{product.priceLabel}</p>
           {product.customisable ? (
-            <span className="text-[0.68rem] font-medium uppercase tracking-[0.16em] text-cocoa-soft">
+            <span className="text-eyebrow font-medium uppercase tracking-[0.16em] text-cocoa-soft">
               Customisable
             </span>
           ) : null}

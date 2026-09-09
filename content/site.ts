@@ -100,8 +100,8 @@ export const policyNav: NavItem[] = [
 ];
 
 export const trustPoints = [
-  { icon: 'leaf', label: '100% Soy Wax', detail: 'Clean, eco-friendly, non-toxic' },
-  { icon: 'hand', label: 'Handmade to Order', detail: 'Poured for you, never mass-made' },
+  { icon: 'leaf', label: '100% Soy Wax', detail: 'Clean, eco‑friendly, non‑toxic' },
+  { icon: 'hand', label: 'Handmade to Order', detail: 'Poured for you, never mass‑made' },
   { icon: 'palette', label: 'Fully Customisable', detail: 'Any colour, any fragrance' },
   { icon: 'boxes', label: 'Bulk Orders Welcome', detail: 'From 20 pieces upward' },
 ] as const;

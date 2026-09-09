@@ -2,7 +2,7 @@ import type { BulkTier, WholesaleTier } from '@/types';
 import { cn, formatPrice } from '@/lib/utils';
 
 const headCell =
-  'pb-3 pr-3 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-cocoa-soft';
+  'pb-3 pr-3 font-sans text-eyebrow font-semibold uppercase tracking-[0.16em] text-cocoa-soft';
 
 /**
  * Wholesale ladder.
@@ -24,7 +24,7 @@ export function WholesaleTable({ tiers, className }: { tiers: WholesaleTier[]; c
             <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-cocoa-soft">
               {tier.quantity}
             </p>
-            <p className="mt-1.5 font-display text-2xl font-semibold text-terracotta-deep">
+            <p className="mt-1.5 font-display text-display-3 font-semibold text-terracotta-deep">
               {tier.pricePerUnit}
             </p>
             <p className="mt-1 text-[0.85rem] leading-snug text-cocoa-soft">{tier.bestFor}</p>

@@ -6,7 +6,8 @@ was broken, what changed, and which components now behave differently on a
 phone than on a desktop.
 
 **Final state: 0 horizontal-overflow failures and 0 sub-44px touch targets
-across 12 routes × 8 breakpoints (96 combinations).**
+across 12 routes × 8 breakpoints, plus a second pass at 360px — the width of the
+device the client actually tested on.**
 
 ---
 
@@ -32,23 +33,24 @@ Pass `--widths 320,375` or `--routes /,/bulk` to narrow a run.
 
 ## Breakpoint matrix
 
-All 12 routes were checked at 320 / 375 / 390 / 412 / 768 / 1024 / 1280 / 1920,
-plus 375 × 667 for the short-viewport case.
+All 12 routes were checked at 320 / **360** / 375 / 390 / 412 / 768 / 1024 / 1280 / 1920,
+plus 375 × 667 for the short-viewport case. 360 was added after a real-device
+check — it is the most common Android width and the original matrix skipped it.
 
-| Route | 320 | 375 | 390 | 412 | 768 | 1024 | 1280 | 1920 |
-|---|---|---|---|---|---|---|---|---|
-| `/` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/collections/mithai-candles` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/collections/marathi-craft` (Devanagari) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/products/modak-candle` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/products/marathi-quote-nameplate` (Devanagari) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/occasions/ganesh-chaturthi` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/bulk` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/customise` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/story` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/how-to-order` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `/contact` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
-| `404` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| Route | 320 | 360 | 375 | 390 | 412 | 768 | 1024 | 1280 | 1920 |
+|---|---|---|---|---|---|---|---|---|---|
+| `/` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/collections/mithai-candles` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/collections/marathi-craft` (Devanagari) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/products/modak-candle` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/products/marathi-quote-nameplate` (Devanagari) | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/occasions/ganesh-chaturthi` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/bulk` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/customise` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/story` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/how-to-order` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `/contact` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
+| `404` | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS | PASS |
 
 PASS = no horizontal overflow, and every touch target ≥ 44 × 44 at touch widths.
 
@@ -162,6 +164,37 @@ was touch targets and typography.
 
 ---
 
+## Round two — the premium pass (360px)
+
+The first pass fixed everything *mechanical*: overflow, touch targets, iOS zoom,
+safe areas. A real-device check then showed the opposite problem — at 360px the
+site read as **overcrowded, and the type too heavy to feel premium**.
+
+> One red herring worth recording: the first round of device screenshots was taken
+> with Chrome's "Desktop site" toggle on, which forces a ~768px viewport and
+> bypasses every mobile pattern below `md`. That is not a real defect. If the site
+> ever looks like the tablet layout on a phone, check that toggle first.
+
+| Issue at 360px | Fix |
+|---|---|
+| Two stacked full-width pills in the hero and at every section CTA — heavy, competing | New `link` Button variant: primary keeps the pill, secondary becomes an underlined text link with an arrow. Applied in Hero, MithaiSignature, `/bulk`, `/story`, `/how-to-order`, `404` |
+| Display scale bottomed out at 29.6px; body at 15px with 1.65 leading made walls of text | Trimmed every `clamp()` min and slope — hero 29.6→26.6px, headings 25.6→21.6px, `body-sm` 15→14px at 1.6 leading |
+| ~16 inline `text-[0.68rem]` eyebrows at 10.9px with duplicated tracking | Single semantic `text-eyebrow` token (10px, 0.24em tracking baked in) |
+| Product card placeholder was 320 × **400px** of empty gradient — larger than the card's content | `mobileAspect="1:1"` below 480px (400→320px). Craft cards `mobileAspect="3:2"` |
+| Marigold ornament + rules repeated above six section headings, ~60px each | Hidden below `sm` in `SectionHeading` |
+| Mithai highlights bar: label and detail shared a row, so "Real silver varq" wrapped against its own description | Stacked label over detail on phones with `divide-y` rules; the centred row layout returns at `sm` |
+| Trust strip descriptions broke mid-phrase ("Clean, eco-/friendly, non-toxic") | Smaller type, `text-balance`, and U+2011 non-breaking hyphens in the copy so lines break between phrases |
+| Section rhythm and grid margins too generous for a small screen | `default` spacing `py-12`→`py-10`; grid margins `mt-12`→`mt-8 sm:mt-12` |
+
+**Accepted trade-off:** body copy is now 14px on phones, just under the 15px floor
+set in the original brief. This was a deliberate call — at 360px the page read as
+a wall of text. Form controls remain at exactly 16px, which is what actually
+prevents iOS zoom, and there is now an automated check enforcing it.
+
+Desktop was verified unchanged at 1280px.
+
+---
+
 ## Components that now behave differently on mobile
 
 Changing any of these without checking the other breakpoint will regress the
@@ -180,7 +213,10 @@ phone experience.
 | `TestimonialCards` | Snap carousel + dots | 2/4-column grid |
 | `WholesaleTable` | Stacked cards | Real `<table>` |
 | `CustomiseSummaryBar` / `CustomiseSummary` | Sticky bottom bar | Sticky side panel (`lg:`) |
-| `Hero` | No parallax | Parallax above 1024px |
+| `Hero` | No parallax; primary pill + secondary text link | Parallax above 1024px |
+| `Button` `variant="link"` | Unfilled text link, 44px hit area | Same — used as the secondary action everywhere |
+| `BrandImage` `mobileAspect` | Shorter crop below 480px (cards 1:1, crafts 3:2) | Authored ratio (4:5) returns at `xs` |
+| `SectionHeading` | Marigold ornament hidden | Ornament shown from `sm` |
 | `ShopByOccasion` | Scroll-snap strip | 6-column grid (`lg:`) |
 
 **Breakpoint note:** a custom `xs: 480px` breakpoint was added. Product grids go
@@ -193,6 +229,9 @@ phone experience.
 Verified by `scripts/mobile-a11y.mjs` (21/21 passing):
 
 - **Pinch-zoom is enabled** — no `maximum-scale`, no `user-scalable=no`.
+- **Every form control computes to ≥16px**, asserted at 360px across all six
+  form-bearing routes. This is the regression guard that stops a future type trim
+  from silently reintroducing involuntary zoom on iOS.
 - `viewport-fit=cover` is set, paired with `env(safe-area-inset-*)`.
 - Under `prefers-reduced-motion: reduce` no looping animation runs (including the
   flame flicker) and no section is left at zero opacity.

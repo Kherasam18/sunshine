@@ -47,7 +47,7 @@ const argWidths = process.argv.indexOf('--widths');
 const WIDTHS =
   argWidths > -1
     ? process.argv[argWidths + 1].split(',').map(Number)
-    : [320, 375, 768, 1280];
+    : [320, 360, 375, 768, 1280];
 
 const argRoutes = process.argv.indexOf('--routes');
 const ACTIVE_ROUTES =

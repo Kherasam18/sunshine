@@ -108,6 +108,28 @@ const browser = await chromium.launch({ executablePath: CHROME });
   await context.close();
 }
 
+// --- form controls must never render below 16px (iOS zooms on focus) -------
+{
+  const context = await browser.newContext({ viewport: { width: 360, height: 800 }, isMobile: true, hasTouch: true });
+  const page = await context.newPage();
+  const tooSmall = [];
+  for (const route of ['/bulk', '/contact', '/customise', '/collections/mithai-candles', '/products/modak-candle', '/']) {
+    await page.goto(BASE + route, { waitUntil: 'networkidle' });
+    const found = await page.evaluate(() =>
+      [...document.querySelectorAll('input, select, textarea')]
+        .filter((el) => {
+          const s = getComputedStyle(el);
+          if (s.display === 'none' || el.type === 'hidden' || el.classList.contains('sr-only')) return false;
+          return parseFloat(s.fontSize) < 16;
+        })
+        .map((el) => `${el.tagName.toLowerCase()}#${el.id || '?'} ${getComputedStyle(el).fontSize}`),
+    );
+    tooSmall.push(...found.map((f) => `${route}: ${f}`));
+  }
+  check('form controls are >=16px (no iOS zoom)', tooSmall.length === 0, tooSmall.slice(0, 5).join(' | '));
+  await context.close();
+}
+
 await browser.close();
 
 let failed = 0;

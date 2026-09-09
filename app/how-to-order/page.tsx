@@ -87,13 +87,13 @@ export default async function HowToOrderPage() {
                     </span>
 
                     <div className="pt-1.5">
-                      <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-gold-deep">
+                      <p className="font-sans text-eyebrow font-semibold uppercase text-gold-deep">
                         Step {step.step}
                       </p>
                       <h3 className="mt-1.5 font-display text-2xl font-semibold leading-tight text-cocoa sm:text-[1.75rem]">
                         {step.title}
                       </h3>
-                      <p className="mt-2.5 max-w-prose text-[0.95rem] leading-relaxed text-cocoa-soft">
+                      <p className="mt-2.5 max-w-prose text-body-sm leading-relaxed text-cocoa-soft">
                         {step.description}
                       </p>
                       {step.note ? (
@@ -192,10 +192,10 @@ export default async function HowToOrderPage() {
 
       <Section tone="cream" spacing="default">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-[2rem] font-bold leading-tight text-terracotta sm:text-4xl">
+          <h2 className="font-display text-display-2 font-bold text-terracotta">
             Still not sure? Just ask.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-cocoa-soft">
+          <p className="mt-4 text-body-sm leading-relaxed sm:text-base text-cocoa-soft">
             There is a real person at the other end of {site.contact.whatsapp}, usually replying the
             same day. No question is too small — most orders start with one.
           </p>
@@ -208,7 +208,7 @@ export default async function HowToOrderPage() {
             >
               Message the studio
             </Button>
-            <Button href="/contact" variant="secondary" size="lg">
+            <Button href="/contact" variant="link">
               Other ways to reach us
             </Button>
           </div>

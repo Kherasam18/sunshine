@@ -33,7 +33,9 @@ export function SectionHeading({
       {ornament ? (
         <span
           aria-hidden="true"
-          className={cn('mb-5 flex items-center gap-3', deep ? 'text-cream/60' : 'text-gold')}
+          // The marigold + rules cost ~60px at every section; on a phone that
+          // furniture repeats six times down the page for no information.
+          className={cn('mb-5 hidden items-center gap-3 sm:flex', deep ? 'text-cream/60' : 'text-gold')}
         >
           <span className={cn('h-px w-10 sm:w-16', deep ? 'bg-cream/40' : 'bg-gold/70')} />
           <Marigold className="h-6 w-6" />
@@ -44,7 +46,7 @@ export function SectionHeading({
       {eyebrow ? (
         <p
           className={cn(
-            'mb-3 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.28em]',
+            'mb-2.5 font-sans text-eyebrow font-semibold uppercase sm:mb-3',
             deep ? 'text-cream/80' : 'text-terracotta-deep',
           )}
         >

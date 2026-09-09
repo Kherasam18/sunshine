@@ -38,7 +38,7 @@ export async function MadeByHand() {
                   className="w-20 shrink-0 rounded-2xl shadow-warm xs:w-24 sm:w-32"
                 />
                 <div className="min-w-0">
-                  <p className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-gold-deep">
+                  <p className="font-sans text-eyebrow font-semibold uppercase text-gold-deep">
                     Step {step.step}
                   </p>
                   <h3 className="mt-1.5 font-display text-display-3 font-semibold text-cocoa">

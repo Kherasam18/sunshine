@@ -75,14 +75,20 @@ const config: Config = {
          * headings interpolate with the viewport rather than stepping at
          * breakpoints — this is what keeps the hero to two lines at 320px.
          */
-        'display-hero': ['clamp(1.85rem, 8.2vw, 4.4rem)', { lineHeight: '1.06', letterSpacing: '-0.02em' }],
-        'display-1': ['clamp(1.75rem, 6.4vw, 3.6rem)', { lineHeight: '1.08', letterSpacing: '-0.015em' }],
-        'display-2': ['clamp(1.6rem, 5.2vw, 3.1rem)', { lineHeight: '1.12', letterSpacing: '-0.01em' }],
-        'display-3': ['clamp(1.4rem, 4vw, 2.2rem)', { lineHeight: '1.15' }],
-        'display-4': ['clamp(1.2rem, 3.2vw, 1.75rem)', { lineHeight: '1.2' }],
-        /** Body floor is 15px; form inputs use `input` (16px) to stop iOS zoom. */
-        'body-sm': ['0.9375rem', { lineHeight: '1.65' }],
+        'display-hero': ['clamp(1.6rem, 7.4vw, 4.4rem)', { lineHeight: '1.08', letterSpacing: '-0.02em' }],
+        'display-1': ['clamp(1.45rem, 5.8vw, 3.6rem)', { lineHeight: '1.1', letterSpacing: '-0.015em' }],
+        'display-2': ['clamp(1.35rem, 4.6vw, 3.1rem)', { lineHeight: '1.14', letterSpacing: '-0.01em' }],
+        'display-3': ['clamp(1.2rem, 3.6vw, 2.2rem)', { lineHeight: '1.18' }],
+        'display-4': ['clamp(1.05rem, 3vw, 1.75rem)', { lineHeight: '1.25' }],
+        /**
+         * Body copy sits at 14px on phones — deliberately below the earlier 15px
+         * floor, because at 360px the page read as a wall of text. Form inputs
+         * keep `input` (16px), which is what actually stops iOS zoom on focus.
+         */
+        'body-sm': ['0.875rem', { lineHeight: '1.6' }],
         input: ['1rem', { lineHeight: '1.5' }],
+        /** Small-caps section labels. Replaces ~16 inline text-[0.68rem] values. */
+        eyebrow: ['0.625rem', { letterSpacing: '0.24em', lineHeight: '1.4' }],
       },
       /**
        * Full 0–100 opacity scale. Tailwind's default scale skips values like

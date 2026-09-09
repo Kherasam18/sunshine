@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 import type { AspectRatio, ImageSlot } from '@/types';
-import { aspectClass, cn } from '@/lib/utils';
+import { aspectClass, aspectClassXs, cn } from '@/lib/utils';
 import { LogoMark } from '@/components/brand/LogoMark';
 import { Sunburst } from '@/components/brand/Ornaments';
 
@@ -9,6 +9,11 @@ interface BrandImageProps {
   slot: ImageSlot;
   /** Overrides the slot's own ratio for a specific layout. */
   aspect?: AspectRatio;
+  /**
+   * Shorter crop used below 480px. A full-width 4:5 placeholder is 400px of
+   * empty gradient on a 360px phone, which dominates the page.
+   */
+  mobileAspect?: AspectRatio;
   className?: string;
   imageClassName?: string;
   sizes?: string;
@@ -32,6 +37,7 @@ interface BrandImageProps {
 export function BrandImage({
   slot,
   aspect,
+  mobileAspect,
   className,
   imageClassName,
   sizes = '(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw',
@@ -47,7 +53,11 @@ export function BrandImage({
       data-slot={slot.id}
       className={cn(
         'relative isolate overflow-hidden bg-cream',
-        fill ? 'h-full w-full' : aspectClass[ratio],
+        fill
+          ? 'h-full w-full'
+          : mobileAspect
+            ? cn(aspectClass[mobileAspect], aspectClassXs[ratio])
+            : aspectClass[ratio],
         className,
       )}
     >

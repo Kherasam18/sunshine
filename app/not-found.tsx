@@ -26,13 +26,13 @@ export default async function NotFound() {
       <div className="mx-auto w-full max-w-2xl text-center">
         <LogoMark className="mx-auto h-16 w-16 text-terracotta/45" flicker title="" />
 
-        <p className="mt-8 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-terracotta-deep">
+        <p className="mt-8 font-sans text-eyebrow font-semibold uppercase text-terracotta-deep">
           Page not found
         </p>
         <h1 className="mt-4 font-display text-display-1 font-bold text-terracotta">
           This one seems to have melted.
         </h1>
-        <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-cocoa-soft">
+        <p className="mx-auto mt-5 max-w-lg text-body-sm leading-relaxed sm:text-base text-cocoa-soft">
           The page you were looking for is not here — but the candles, the resin keepsakes and the
           Lippan frames all are. Start with one of these.
         </p>
@@ -59,8 +59,7 @@ export default async function NotFound() {
           <Button
             href={generalEnquiryLink()}
             external
-            variant="secondary"
-            size="lg"
+            variant="link"
             icon={<MessageCircle className="h-[18px] w-[18px]" />}
           >
             Ask us what you were after

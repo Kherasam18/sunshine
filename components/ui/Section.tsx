@@ -31,9 +31,9 @@ interface SectionProps {
 
 const spacings = {
   none: '',
-  tight: 'py-8 sm:py-12',
-  default: 'py-12 sm:py-20 lg:py-24',
-  roomy: 'py-14 sm:py-24 lg:py-32',
+  tight: 'py-7 sm:py-12',
+  default: 'py-10 sm:py-20 lg:py-24',
+  roomy: 'py-12 sm:py-24 lg:py-32',
 };
 
 /** The page's structural building block: tone, rhythm, ornament, container. */
