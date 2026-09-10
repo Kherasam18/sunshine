@@ -121,6 +121,7 @@ export const heroImage: ImageSlot = {
   note: 'Full-bleed hero. Modak candles on a brass platter with fresh marigolds, warm natural side light, shallow depth of field. Leave clear negative space in the left third for the headline.',
   mobileNote:
     'Portrait 4:5 crop of the same set-up for phones — subject lower in the frame, clear space across the top two-thirds for the headline. Over 90% of visitors arrive on a phone, so shoot this one properly rather than cropping the landscape.',
+  src: '/images/home-hero.png',
 };
 
 export const processSteps: ProcessStep[] = [
@@ -170,6 +171,7 @@ export const processVideo: VideoSlot = {
   label: 'Making-of reel',
   aspect: '9:16',
   note: 'Muted, looping vertical reel (15–25s): wax pouring, demoulding, varq detailing, finished piece. Export 1080×1920, H.264 MP4, under 6 MB.',
+  src: '/videos/making-of reel.mp4',
 };
 
 export const studioFeed: ImageSlot[] = [
@@ -187,6 +189,7 @@ export const bulkImage: ImageSlot = {
   alt: 'A large table of handmade candles packed for a bulk return-gift order',
   aspect: '16:9',
   note: 'Wide shot of a completed bulk order — rows of boxed candles with tags. Warm light, expose slightly under so white text sits comfortably on top.',
+  src: '/images/home-hero.png',
 };
 
 /** Shown on /contact. The studio is home-based, so these are reply windows. */

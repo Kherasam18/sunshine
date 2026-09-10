@@ -22,6 +22,20 @@ const styling: Record<ProductCategory, string> = {
  * generated here and flagged `optional` so ASSETS-MANIFEST.md can separate
  * them from the shots the site genuinely needs.
  */
+function getFallbackImage(slug: string, angle: string) {
+  if (slug === 'modak-candle') {
+    return angle === 'detail' ? '/images/product-modak-candle-detail.jpg' : '/images/product-modak-candle-styled.png';
+  }
+  switch (slug) {
+    case 'laddu-candle': return '/images/product-laddu-candle.png';
+    case 'kaju-katli-candle': return '/images/product-kaju-katli-candle.png';
+    case 'kesar-pedha-candle': return '/images/product-kesar-pedha-candle.png';
+    case 'rasmalai-candle': return '/images/product-rasmalai-candle.png';
+    case 'mixed-mithai-bowl-candle': return '/images/product-mixed-mithai-bowl-candle.png';
+    default: return undefined;
+  }
+}
+
 function defaultAngles(product: Product): ImageSlot[] {
   const context = styling[product.category];
   return [
@@ -32,6 +46,7 @@ function defaultAngles(product: Product): ImageSlot[] {
       aspect: '1:1',
       note: `Macro of the finish on the ${product.name} — texture, silver leaf, edges. Fill the frame and keep it tack sharp.`,
       optional: true,
+      src: getFallbackImage(product.slug, 'detail'),
     },
     {
       id: `product-${product.slug}-styled`,
@@ -40,6 +55,7 @@ function defaultAngles(product: Product): ImageSlot[] {
       aspect: '4:5',
       note: `The ${product.name} ${context}. Lifestyle framing, not product-on-white.`,
       optional: true,
+      src: getFallbackImage(product.slug, 'styled'),
     },
     {
       id: `product-${product.slug}-scale`,
@@ -48,6 +64,7 @@ function defaultAngles(product: Product): ImageSlot[] {
       aspect: '1:1',
       note: `The ${product.name} held in one hand, or beside its packaging, so the size reads clearly. The studio's signature shot.`,
       optional: true,
+      src: getFallbackImage(product.slug, 'scale'),
     },
   ];
 }
@@ -58,6 +75,7 @@ function defaultReel(product: Product): VideoSlot {
     label: `${product.name} — making-of reel`,
     aspect: '9:16',
     note: `Vertical reel of the ${product.name} being made: pouring or shaping, demoulding, the finishing detail, the final piece. 15–25s, muted loop, 1080 × 1920.`,
+    src: '/videos/making-of reel.mp4',
   };
 }
 

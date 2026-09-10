@@ -116,6 +116,7 @@ export const bulkHero: ImageSlot = {
   alt: 'A large handmade candle order laid out and packed for dispatch',
   aspect: '21:9',
   note: 'Wide banner: a full table of a completed bulk order mid-pack. Expose slightly under so white text sits comfortably on top.',
+  src: '/images/home-hero.png',
 };
 
 /** Quantity bands offered in the bulk enquiry form. */

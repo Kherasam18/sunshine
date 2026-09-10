@@ -49,7 +49,11 @@ export function PageHero({
           </div>
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(253,248,240,0.94)_0%,rgba(253,248,240,0.45)_30%,rgba(253,248,240,0.35)_55%,rgba(253,248,240,0.92)_100%)]"
+            className="absolute inset-0 -z-10 lg:hidden bg-[linear-gradient(180deg,rgba(253,248,240,0.94)_0%,rgba(253,248,240,0.45)_30%,rgba(253,248,240,0.35)_55%,rgba(253,248,240,0.92)_100%)]"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 hidden lg:block bg-[linear-gradient(90deg,rgba(253,248,240,0.96)_0%,rgba(253,248,240,0.8)_35%,rgba(253,248,240,0)_60%)]"
           />
         </>
       ) : (

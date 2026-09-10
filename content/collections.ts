@@ -25,6 +25,7 @@ export const collections: Collection[] = [
       alt: 'A wide spread of handmade mithai candles with marigolds and diyas',
       aspect: '21:9',
       note: 'Wide banner: mithai candles spread across a brass tray with marigolds and a lit diya. Leave space on the left for the page title.',
+      src: '/images/home-hero.png',
     },
   },
   {

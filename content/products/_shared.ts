@@ -5,15 +5,16 @@ export function productImage(
   slug: string,
   label: string,
   note: string,
-  options: { aspect?: AspectRatio; alt?: string; suffix?: string } = {},
+  options: { aspect?: AspectRatio; alt?: string; suffix?: string; src?: string } = {},
 ): ImageSlot {
-  const { aspect = '4:5', alt, suffix } = options;
+  const { aspect = '4:5', alt, suffix, src } = options;
   return {
     id: suffix ? `product-${slug}-${suffix}` : `product-${slug}`,
     label,
     alt: alt ?? `${label} — handmade by Sunshine Creations`,
     aspect,
     note,
+    src,
   };
 }
 

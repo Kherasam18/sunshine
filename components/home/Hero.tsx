@@ -46,8 +46,8 @@ export function Hero({
       </motion.div>
 
       {/* Scrims: keep the header and headline legible over any photograph */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(253,248,240,0.92)_0%,rgba(253,248,240,0.35)_22%,rgba(253,248,240,0.15)_48%,rgba(253,248,240,0.86)_100%)]" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 lg:bg-[linear-gradient(100deg,rgba(253,248,240,0.94)_0%,rgba(253,248,240,0.72)_38%,rgba(253,248,240,0.05)_72%)]" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 lg:hidden bg-[linear-gradient(180deg,rgba(253,248,240,0.92)_0%,rgba(253,248,240,0.35)_22%,rgba(253,248,240,0.15)_48%,rgba(253,248,240,0.86)_100%)]" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 hidden lg:block bg-[linear-gradient(90deg,rgba(253,248,240,0.96)_0%,rgba(253,248,240,0.8)_35%,rgba(253,248,240,0)_60%)]" />
 
       <div className="container relative">
         <div className="max-w-2xl">

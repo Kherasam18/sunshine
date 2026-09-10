@@ -23,6 +23,7 @@ export const occasions: Occasion[] = [
       alt: 'Modak candles and a Ganesha standee set up for Ganesh Chaturthi',
       aspect: '1:1',
       note: 'Modak candles and a Ganesha standee on a decorated mandap step with marigolds and a diya.',
+      src: '/images/product-modak-candle-lit.png',
     },
     hero: {
       id: 'occasion-ganesh-chaturthi-hero',
@@ -30,6 +31,7 @@ export const occasions: Occasion[] = [
       alt: 'A Ganesh Chaturthi mandap decorated with modak candles and marigolds',
       aspect: '21:9',
       note: 'Wide banner: a decorated mandap with modak candles on a brass thali, marigold garlands, warm lamp light.',
+      src: '/images/product-modak-candle-lit.png',
     },
   },
   {

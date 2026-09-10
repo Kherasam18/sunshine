@@ -36,12 +36,13 @@ export const mithaiCandles: Product[] = [
         'modak-candle',
         'Modak Candle',
         'Three modak candles on a brass thali with marigold petals. Silver varq must read clearly — light from the side.',
+        { src: '/images/product-modak-candle.png' }
       ),
       productImage(
         'modak-candle',
         'Modak Candle — lit',
         'The same modak lit in low light, flame visible, warm bokeh behind. Shows it is genuinely a candle.',
-        { suffix: 'lit', aspect: '1:1' },
+        { suffix: 'lit', aspect: '1:1', src: '/images/product-modak-candle-lit.png' },
       ),
     ],
   },
@@ -71,6 +72,7 @@ export const mithaiCandles: Product[] = [
         'laddu-candle',
         'Laddu Candle',
         'Four laddu candles in a window gift box, lid half open. Texture and silver varq must be sharp.',
+        { src: '/images/product-laddu-candle.png' }
       ),
     ],
   },
@@ -101,6 +103,7 @@ export const mithaiCandles: Product[] = [
         'kaju-katli-candle',
         'Kaju Katli Candle',
         'Six katli diamonds fanned on a round wooden platter, silver leaf catching the light. Overhead flat-lay.',
+        { src: '/images/product-kaju-katli-candle.png' }
       ),
     ],
   },
@@ -131,6 +134,7 @@ export const mithaiCandles: Product[] = [
         'kesar-pedha-candle',
         'Kesar Pedha Candle',
         'A stack of three saffron pedha candles on a brass coaster, silver leaf visible, warm light.',
+        { src: '/images/product-kesar-pedha-candle.png' }
       ),
     ],
   },
@@ -158,6 +162,7 @@ export const mithaiCandles: Product[] = [
         'rasmalai-candle',
         'Rasmalai Candle',
         'Glass bowl rasmalai candle shot at 45°, pistachio and rose petal detail sharp, cream fabric backdrop.',
+        { src: '/images/product-rasmalai-candle.png' }
       ),
     ],
   },
@@ -185,6 +190,7 @@ export const mithaiCandles: Product[] = [
         'mixed-mithai-bowl-candle',
         'Mixed Mithai Bowl Candle',
         'Wooden bowl filled with assorted mithai candles, shot slightly overhead with marigolds and a diya alongside.',
+        { src: '/images/product-mixed-mithai-bowl-candle.png' }
       ),
     ],
   },

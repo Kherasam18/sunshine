@@ -148,8 +148,8 @@ Carried over from the existing Instagram grid, which already looks consistent:
 ## Required — pages
 
 ${bySection(pageRows)
-  .map(([section, group]) => `### ${section}\n\n${table(group)}`)
-  .join('\n\n')}
+    .map(([section, group]) => `### ${section}\n\n${table(group)}`)
+    .join('\n\n')}
 
 ---
 
@@ -159,9 +159,9 @@ The primary image for each product. Used on cards, collection grids and as the
 main product-page image.
 
 ${groupProducts(productRows)
-  .filter((group) => group.rows.length > 0)
-  .map((group) => `### ${group.name}\n\n${table(group.rows, 'Product')}`)
-  .join('\n\n')}
+    .filter((group) => group.rows.length > 0)
+    .map((group) => `### ${group.name}\n\n${table(group.rows, 'Product')}`)
+    .join('\n\n')}
 
 ---
 
@@ -171,9 +171,9 @@ Three supporting angles per product, shown as gallery thumbnails on the product
 page. Shoot these for the bestsellers first; the rest can follow.
 
 ${groupProducts(optional)
-  .filter((group) => group.rows.length > 0)
-  .map((group) => `### ${group.name}\n\n${table(group.rows, 'Product')}`)
-  .join('\n\n')}
+    .filter((group) => group.rows.length > 0)
+    .map((group) => `### ${group.name}\n\n${table(group.rows, 'Product')}`)
+    .join('\n\n')}
 
 ---
 
@@ -186,11 +186,11 @@ the file \`<slot-id>-mobile.jpg\` and set \`mobileSrc\` on the slot.
 | Slot ID | Where it appears | Ratio | Recommended px | What the mobile crop needs |
 |---|---|---|---|---|
 ${mobileCrops
-  .map(
-    ({ slot, section }) =>
-      `| \`${slot.id}-mobile\` | ${escape(section)} | 4:5 | 1200 × 1500 | ${escape(slot.mobileNote)} |`,
-  )
-  .join('\n')}
+    .map(
+      ({ slot, section }) =>
+        `| \`${slot.id}-mobile\` | ${escape(section)} | 4:5 | 1200 × 1500 | ${escape(slot.mobileNote)} |`,
+    )
+    .join('\n')}
 
 ---
 
@@ -203,11 +203,11 @@ can be re-cut for these.
 | Slot ID | Where it appears | Ratio | Recommended | What it should show |
 |---|---|---|---|---|
 ${videos
-  .map(
-    ({ slot, section }) =>
-      `| \`${slot.id}\` | ${escape(section)} | ${slot.aspect} | 1080 × 1920, MP4 (H.264), < 6 MB | ${escape(slot.note)} |`,
-  )
-  .join('\n')}
+    .map(
+      ({ slot, section }) =>
+        `| \`${slot.id}\` | ${escape(section)} | ${slot.aspect} | 1080 × 1920, MP4 (H.264), < 6 MB | ${escape(slot.note)} |`,
+    )
+    .join('\n')}
 
 Product reels are optional — one good generic making-of reel can be reused
 across several products by pointing multiple slots at the same file.
